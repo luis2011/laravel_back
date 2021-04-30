@@ -51,7 +51,7 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('Post.create')->with(["categories"=> $categories]);
+        return view('post.create')->with(["categories"=> $categories]);
     }
 
     /**
@@ -88,7 +88,7 @@ class PostController extends Controller
     {
         $data = Post::findOrFail($id);
         $categories = Category::all();
-        return view("Post.show")->with(["post" => $data, "categories" => $categories]);
+        return view("post.show")->with(["post" => $data, "categories" => $categories]);
     }
 
     /**
@@ -103,7 +103,7 @@ class PostController extends Controller
        $data = Post::findOrFail($id);
         $categories = Category::all();
 
-        return view("Post.edit")->with(["post" => $data, "categories" => $categories]);
+        return view("post.edit")->with(["post" => $data, "categories" => $categories]);
 
     }
 
@@ -140,6 +140,6 @@ class PostController extends Controller
         Storage::delete("public/$post->image"); // aqui si utiliza doble comillas (borra la imagen vieja)
 
         Post::destroy($id);
-        return  Redirect()->route('Post.index');
+        return  Redirect()->route('post.index');
     }
 }
