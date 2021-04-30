@@ -75,7 +75,7 @@ class PostController extends Controller
         }
         Post::insert($data);
         Session::flash('alert-success', "Se ha Creado el Post con éxito! {$data['title']}");
-        return  Redirect()->route('Post.index');
+        return  Redirect()->route('post.index');
 
     }
 
