@@ -20,7 +20,7 @@ class PostController extends Controller
     {
         $data['posts'] = Post::paginate(); // 5= registros por pagina
 
-        return view('Post.index' , $data);
+        return view('post.index' , $data);
     }
 
     public function search(Request $request)
