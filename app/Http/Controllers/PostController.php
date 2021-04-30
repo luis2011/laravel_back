@@ -66,6 +66,7 @@ class PostController extends Controller
         $data = $request->all();
         var_dump($data);
         die(); para demostrar que la info viaja*/
+        $data = $request->except('_token');
         if($request->hasFile('image')){
             $data['image'] = $request->file('image')->store('uploads','public');
             // desde la consola
